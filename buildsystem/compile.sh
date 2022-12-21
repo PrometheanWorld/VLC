@@ -149,7 +149,7 @@ else
         exit 1
     fi
     rm -f gradle.properties
-    STOREALIAS="vlc"
+    STOREALIAS="platform"
 fi
 
 if [ ! -f gradle.properties ]; then
@@ -160,8 +160,14 @@ if [ ! -f gradle.properties ]; then
     echo kapt.include.compile.classpath=false >> gradle.properties
     echo keyStoreFile=$KEYSTORE_FILE >> gradle.properties
     echo storealias=$STOREALIAS >> gradle.properties
+    echo "org.gradle.daemon=true" >> gradle.properties
+    echo "org.gradle.configureondemand=true" >> gradle.properties
+    echo "org.gradle.jvmargs=-Xms512M -Xmx8g -XX:MaxPermSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" >> gradle.properties
+    echo "org.gradle.parallel=true" >> gradle.properties
     if [ -z "$PASSWORD_KEYSTORE" ]; then
         echo storepwd=android >> gradle.properties
+    else
+        echo storepwd=$PASSWORD_KEYSTORE >> gradle.properties
     fi
 fi
 
