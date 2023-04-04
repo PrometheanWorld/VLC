@@ -124,10 +124,13 @@ object AndroidDevices {
         val ctx = AppContextProvider.appContext
         val pm = ctx.packageManager
         hasTsp = pm == null || pm.hasSystemFeature("android.hardware.touchscreen")
-        isAndroidTv = pm != null && pm.hasSystemFeature("android.software.leanback")
+        // MCDFW-479 MCD | Integrate VLC APK & Hide - Start Modify
+        // Set 'isAndroidTv' and 'isTv' to be true to user TV ui mode VLC
+        isAndroidTv = true
         watchDevices = isAndroidTv && Build.MODEL.startsWith("Bouygtel")
         isChromeBook = pm != null && pm.hasSystemFeature("org.chromium.arc.device_management")
-        isTv = isAndroidTv || !isChromeBook && !hasTsp
+        isTv = true
+        // End Modify
         hasPlayServices = pm == null || hasPlayServices(pm)
         hasPiP = AndroidUtil.isOOrLater && pm != null && pm.hasSystemFeature(PackageManager.FEATURE_PICTURE_IN_PICTURE) || AndroidUtil.isNougatOrLater && isAndroidTv
         pipAllowed = hasPiP || hasTsp && !AndroidUtil.isOOrLater
