@@ -31,15 +31,15 @@
 
     <!-- Extensions API permissions -->
     <permission
-        android:name="org.videolan.vlc.permission.READ_EXTENSION_DATA"
+        android:name="com.prometheanworld.vlc.permission.READ_EXTENSION_DATA"
         android:protectionLevel="normal" />
 
     <permission
-        android:name="org.videolan.vlc.permission.BIND_DATA_CONSUMER"
+        android:name="com.prometheanworld.vlc.permission.BIND_DATA_CONSUMER"
         android:protectionLevel="normal" />
 
-    <uses-permission android:name="org.videolan.vlc.permission.READ_EXTENSION_DATA" />
-    <uses-permission android:name="org.videolan.vlc.permission.BIND_DATA_CONSUMER" />
+    <uses-permission android:name="com.prometheanworld.vlc.permission.READ_EXTENSION_DATA" />
+    <uses-permission android:name="com.prometheanworld.vlc.permission.BIND_DATA_CONSUMER" />
 
     <application>
         <activity android:name="${applicationId}.gui.DebugLogActivity"

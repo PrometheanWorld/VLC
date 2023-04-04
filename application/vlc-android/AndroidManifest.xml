@@ -22,7 +22,7 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="org.videolan.vlc.permission.READ_EXTENSION_DATA"/>
+    <uses-permission android:name="com.prometheanworld.vlc.permission.READ_EXTENSION_DATA"/>
     <uses-permission android:name="com.android.providers.tv.permission.READ_EPG_DATA"/>
     <uses-permission android:name="com.android.providers.tv.permission.WRITE_EPG_DATA"/>
 
@@ -46,6 +46,9 @@
     <uses-feature
         android:name="android.hardware.bluetooth"
         android:required="false"/>
+    <queries>
+        <package android:name="android.media.tv" />
+    </queries>
 
     <application>
 

@@ -38,7 +38,7 @@ allprojects {
 }
 
 ext {
-    appId = "org.videolan.vlc"
+    appId = "com.prometheanworld.vlc"
     versionName = '3.5.0'
     versionCode = 3050000
     libvlcVersion = '3.5.0-eap10'
